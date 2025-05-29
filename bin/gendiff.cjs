@@ -1,4 +1,4 @@
-// bin/gendiff.js
+// bin/gendiff.cjs
 const { program } = require('commander');
 const path = require('path');
 
@@ -11,7 +11,12 @@ program
   .option('-f, --format [type]', 'output format (json, plain, stylish)', 'stylish')
   .option('-h, --help', 'display help for command');
 
-program.parse(process.argv);
+// Проверяем, был ли передан флаг --help
+if (process.argv.includes('--help') || process.argv.includes('-h')) {
+  program.help();
+} else {
+  program.parse(process.argv);
+}
 
 const args = program.args;
 
@@ -22,7 +27,6 @@ if (args.length < 2) {
   const [filepath1, filepath2] = args;
   const { format } = program;
 
-  // Подключаем вашу функцию genDiff
   const { genDiff } = require('../src/index');
 
   try {
