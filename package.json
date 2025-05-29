@@ -1,0 +1,22 @@
+{
+  "name": "@hexlet/gendiff",
+  "version": "1.0.0",
+  "description": "Compares two configuration files and shows a difference.",
+  "main": "dist/index.js",
+  "type": "module",
+  "bin": {
+    "gendiff": "./bin/gendiff.js"
+  },
+  "scripts": {
+    "start": "node bin/gendiff.js",
+    "build": "babel src --out-dir dist"
+  },
+  "dependencies": {
+    "commander": "^11.0.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.27.2",
+    "@babel/core": "^7.27.3",
+    "@babel/preset-env": "^7.27.2"
+  }
+}
