@@ -1,16 +1,13 @@
-// src/index.js
-import { createRequire } from 'module';
-const requireFs = createRequire(import.meta.url);
-const fs = requireFs('fs');
-import path from 'path';
-import { getDiff } from './diff.js';
-import { stylish } from './formatters/stylish.js';
+const fs = require('fs');
+const path = require('path');
+const { getDiff } = require('./diff.js');
+const { stylish } = require('./formatters/stylish.js');
 
-export function readFileSync(filePath, encoding) {
+function readFileSync(filePath, encoding) {
   return fs.readFileSync(filePath, encoding);
 }
 
-export function parseFile(filePath) {
+function parseFile(filePath) {
   const content = readFileSync(filePath, 'utf-8');
   const fileExt = path.extname(filePath).toLowerCase();
 
@@ -22,7 +19,7 @@ export function parseFile(filePath) {
   }
 }
 
-export default function genDiff(file1, file2, format = 'stylish') {
+function genDiff(file1, file2, format = 'stylish') {
   if (!fs.existsSync(file1)) {
     throw new Error(`File not found: ${file1}`);
   }
@@ -48,3 +45,9 @@ export default function genDiff(file1, file2, format = 'stylish') {
 
   return formatter(diff);
 }
+
+module.exports = {
+  readFileSync,
+  parseFile,
+  genDiff,
+};
