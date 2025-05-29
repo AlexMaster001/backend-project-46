@@ -1,10 +1,12 @@
+// __tests__/gendiff.test.js
 const path = require('path');
 const { genDiff } = require('../src/index');
+const { readFileSync } = require('../src/parsers');
 
 const getFixturePath = (filename) => path.resolve(__dirname, '..', 'test', 'fixtures', filename);
 
-describe('genDiff', () => {
-  it('should compare two JSON files and return correct diff in stylish format', () => {
+describe('gendiff CLI functionality', () => {
+  it('should generate correct stylish diff for two JSON files', () => {
     const filepath1 = getFixturePath('file1.json');
     const filepath2 = getFixturePath('file2.json');
 

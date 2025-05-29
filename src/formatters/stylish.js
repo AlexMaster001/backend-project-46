@@ -1,5 +1,5 @@
 // src/formatters/stylish.js
-export function stylish(diff) {
+function stylish(diff) {
   return diff
     .map(item => {
       if (item.status === 'added') {
@@ -15,3 +15,5 @@ export function stylish(diff) {
     })
     .join('\n');
 }
+
+module.exports = { stylish };
