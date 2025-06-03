@@ -1,5 +1,5 @@
-import formatStylish from './stylish.js';
-import formatPlain from './plain.js';
+import formatStylish from './stylish.js'
+import formatPlain from './plain.js'
 
 const makeFormat = (diffData, formatName = 'stylish') => {
   switch (formatName) {
@@ -10,8 +10,8 @@ const makeFormat = (diffData, formatName = 'stylish') => {
     case 'json':
       return JSON.stringify(diffData);
     default:
-      throw new Error(`Format error: '${formatName}'`);
+      throw new Error(`Format error: '${formatName}'`)
   }
-};
+}
 
-export default makeFormat;
+export default makeFormat
