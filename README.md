@@ -2,9 +2,8 @@
 [![Actions Status](https://github.com/AlexMaster001/backend-project-46/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/AlexMaster001/backend-project-46/actions)
 
 ![Demo](https://asciinema.org/a/rGliUpTKXgFbaWNF9Kz8RxR2b )
-[![asciicast](https://asciinema.org/a/rGliUpTKXgFbaWNF9Kz8RxR2b.svg)](https://asciinema.org/a/rGliUpTKXgFbaWNF9Kz8RxR2b)
 
-[![asciicast](https://asciinema.org/a/iFS2Cf5AvP3bxwHdDI109PuUv.svg )](https://asciinema.org/a/iFS2Cf5AvP3bxwHdDI109PuUv )
+[![asciicast](https://asciinema.org/a/F27UNgG1vSVSzIKHDGweVed4V.svg)](https://asciinema.org/a/F27UNgG1vSVSzIKHDGweVed4V)
 
 [![Build Status](https://github.com/hexlet/backend-project-46/actions/workflows/ci.yml/badge.svg )](https://github.com/AlexMaster001/backend-project-46/actions/workflows/ci.yml )
 [![Test Coverage](https://sonarcloud.io/api/project_badges/measure?project=backend-project-46&metric=coverage )](https://sonarcloud.io/summary/new_code?id=backend-project-46 )
@@ -32,6 +31,22 @@ Compares two configuration files and shows a difference.
 - Code quality analysis with SonarCloud
 
 ## Usage
+Comparison of flat JSON files:
+Command: gendiff __fixtures__/file1.json __fixtures__/file2.json
+Format: json-json
 
-```bash
-gendiff file1.json file2.json [-f <format>]
+Comparison of flat JSON and YAML files:
+Command: gendiff __fixtures__/file1.json __fixtures__/file2.yml
+Format: json-yml
+
+Comparison of nested structure JSON and YAML files:
+Command: gendiff __fixtures__/file3.json __fixtures__/file4.yaml
+Format: json-yaml
+
+Comparison of nested structure JSON and YAML files, plain format:
+Command: gendiff --format plain __fixtures__/file3.json __fixtures__/file4.yaml
+Format: json-yaml, plain
+
+Comparison of nested structure JSON and YAML files, JSON format:
+Command: gendiff --format json __fixtures__/file3.json __fixtures__/file4.yaml
+Format: json-yaml, json

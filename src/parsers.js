@@ -1,31 +1,15 @@
-// src/parsers.js
-const fs = require('fs');
-const path = require('path');
-const yaml = require('js-yaml');
-const ini = require('ini');
+import yaml from 'js-yaml';
 
-function readFileSync(filePath, encoding) {
-  return fs.readFileSync(filePath, encoding);
-}
-
-function parseFile(filePath) {
-  const content = readFileSync(filePath, 'utf-8');
-  const fileExt = path.extname(filePath).toLowerCase();
-
-  switch (fileExt) {
-    case '.json':
-      return JSON.parse(content);
-    case '.yaml':
-    case '.yml':
-      return yaml.load(content);
-    case '.ini':
-      return ini.parse(content);
+const parse = (data, format) => {
+  switch (format) {
+    case 'json':
+      return JSON.parse(data);
+    case 'yml':
+    case 'yaml':
+      return yaml.load(data);
     default:
-      throw new Error(`Unsupported file format: ${fileExt}`);
+      throw new Error(`Unknown parsing format '${format}'`);
   }
-}
-
-module.exports = {
-  readFileSync,
-  parseFile,
 };
+
+export default parse;

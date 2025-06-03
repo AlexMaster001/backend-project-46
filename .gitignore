@@ -1,13 +1,2 @@
-# .gitignore
-
-# Node.js
-node_modules/
-coverage/
-dist/
-*.log
-*.cast
-*.env
-
-# OS generated files
-.DS_Store
-Thumbs.db
+/node_modules/
+/coverage/

@@ -1,7 +1,14 @@
-.PHONY: test lint
+install:
+	npm ci
 
-test:
-    npm test
+publish:
+	npm publish --dry-run
 
 lint:
-    npm run lint
+	npx eslint .
+
+test:
+	NODE_OPTIONS=--experimental-vm-modules npx jest
+
+test-coverage:
+	NODE_OPTIONS=--experimental-vm-modules npx jest --coverage --coverageProvider=v8
