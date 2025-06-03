@@ -4,9 +4,9 @@ import parse from './parsers.js';
 import makeAstTree from './makeAstTree.js';
 import makeFormat from './formatters/index.js';
 
-const getPath = (filepath) => path.resolve(process.cwd(), filepath);
-const getAbsPath = (filepath) => readFileSync(getPath(filepath), 'utf8');
-const getExtension = (pathToFile) => path.extname(pathToFile).slice(1);
+const getPath = filepath => path.resolve(process.cwd(), filepath);
+const getAbsPath = filepath => readFileSync(getPath(filepath), 'utf8');
+const getExtension = pathToFile => path.extname(pathToFile).slice(1);
 
 const genDiff = (pathToFile1, pathToFile2, format) => {
   const extension1 = getExtension(pathToFile1);

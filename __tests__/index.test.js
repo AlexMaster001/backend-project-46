@@ -10,8 +10,8 @@ import stylish from '../src/formatters/stylish';
 const __filename = url.fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const getFixturePath = (filename) => path.join(__dirname, '..', '__fixtures__', filename);
-const readFile = (filename) => fs.readFileSync(getFixturePath(filename), 'utf-8');
+const getFixturePath = filename => path.join(__dirname, '..', '__fixtures__', filename);
+const readFile = filename => fs.readFileSync(getFixturePath(filename), 'utf-8');
 
 const testFile = readFile('result.txt');
 const fileJson1 = './__fixtures__/file1.json';
@@ -57,12 +57,12 @@ test('genDiff json: JSON & YML nested files', () => {
 });
 
 test('check: invalid parsers', () => {
-  expect(() => parse('oops')).toThrow("Unknown parsing format 'undefined'");
+  expect(() => parse('oops')).toThrow('Unknown parsing format \'undefined\'');
 });
 
 test('check: invalid format', () => {
   const obj = [{ key: 'someone' }];
-  expect(() => makeFormat(obj, 'lalalend')).toThrow("Format error: 'lalalend'");
+  expect(() => makeFormat(obj, 'lalalend')).toThrow('Format error: \'lalalend\'');
 });
 
 test('check: invalid stylish', () => {
