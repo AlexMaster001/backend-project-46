@@ -24,11 +24,3 @@ jobs:
       - run: npm test
 
       - run: npx eslint . --fix
-
-      - name: SonarCloud Scan
-        uses: SonarSource/sonarqube-scan-action@v5.0.0
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-          SONAR_PROJECT_KEY: AlexMaster001_backend-project-46
-          SONAR_ORGANIZATION: alexmaster001
