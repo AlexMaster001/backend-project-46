@@ -5,8 +5,7 @@
 
 [![asciicast](https://asciinema.org/a/F27UNgG1vSVSzIKHDGweVed4V.svg)](https://asciinema.org/a/F27UNgG1vSVSzIKHDGweVed4V)
 
-[![Build Status](https://github.com/hexlet/backend-project-46/actions/workflows/ci.yml/badge.svg )](https://github.com/AlexMaster001/backend-project-46/actions/workflows/ci.yml )
-[![Test Coverage](https://sonarcloud.io/api/project_badges/measure?project=backend-project-46&metric=coverage )](https://sonarcloud.io/summary/new_code?id=backend-project-46 )
+
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=AlexMaster001_backend-project-46&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=AlexMaster001_backend-project-46)
 
 
@@ -17,8 +16,6 @@
 Compares two configuration files and shows a difference.
 
 [![Build Status](https://github.com/AlexMaster001/backend-project-46/actions/workflows/ci.yml/badge.svg )](https://github.com/AlexMaster001/backend-project-46/actions/workflows/ci.yml )
-[![Test Coverage](https://sonarcloud.io/api/project_badges/measure?project=backend-project-46&metric=coverage )](https://sonarcloud.io/summary/new_code?id=backend-project-46 )
-[![Quality Gate](https://sonarcloud.io/api/project_badges/measure?project=backend-project-46&metric=alert_status )](https://sonarcloud.io/summary/new_code?id=backend-project-46 )
 
 ## Features
 
