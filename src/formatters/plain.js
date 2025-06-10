@@ -1,6 +1,6 @@
 import _ from 'lodash'
 
-const whatIsValue = value => {
+const whatIsValue = (value) => {
   if (_.isObject(value)) {
     return '[complex value]'
   }
@@ -13,10 +13,10 @@ const whatIsValue = value => {
   return String(value)
 }
 
-const formatPlain = objTree => {
+const formatPlain = (objTree) => {
   const format = (nodes, property) => nodes
-    .filter(node => node.status !== 'unchanged')
-    .map(node => {
+    .filter((node) => node.status !== 'unchanged')
+    .map((node) => {
       const item = property ? `${property}.${node.key}` : node.key
       switch (node.status) {
         case 'nested':
