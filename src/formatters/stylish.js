@@ -12,8 +12,8 @@ const stringify = (value, depth) => {
   return `{\n${getKeys.join('\n')}\n  ${indent(depth)}}`
 }
 
-const formatStylish = objTree => {
-  const step = (tree, depth) => tree.map(node => {
+const formatStylish = (objTree) => {
+  const step = (tree, depth) => tree.map((node) => {
     const getValue = (value, sign) => `${indent(depth)}${sign} ${node.key}: ${stringify(value, depth)}\n`
     switch (node.status) {
       case 'nested':
