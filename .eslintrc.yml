@@ -15,6 +15,7 @@ parserOptions:
 
 rules:
   semi: ['error', 'never']  # Не требует точку с запятой
+  arrow-parens: ['error', 'as-needed']
   no-console: 0
   import/extensions: # FIXME: remove when rule will be adjusted for new nodejs version
     - error
