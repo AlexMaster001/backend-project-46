@@ -1,6 +1,6 @@
 import _ from 'lodash'
 
-const indent = (depth) => ' '.repeat((depth * 4) - 2)
+const indent = depth => ' '.repeat((depth * 4) - 2)
 
 const stringify = (value, depth) => {
   if (!_.isObject(value)) {
@@ -8,12 +8,12 @@ const stringify = (value, depth) => {
   }
 
   const keys = Object.keys(value)
-  const getKeys = keys.map((key) => `${indent(depth + 1)}  ${key}: ${stringify(value[key], depth + 1)}`)
+  const getKeys = keys.map(key => `${indent(depth + 1)}  ${key}: ${stringify(value[key], depth + 1)}`)
   return `{\n${getKeys.join('\n')}\n  ${indent(depth)}}`
 }
 
-const formatStylish = (objTree) => {
-  const step = (tree, depth) => tree.map((node) => {
+const formatStylish = objTree => {
+  const step = (tree, depth) => tree.map(node => {
     const getValue = (value, sign) => `${indent(depth)}${sign} ${node.key}: ${stringify(value, depth)}\n`
     switch (node.status) {
       case 'nested':
