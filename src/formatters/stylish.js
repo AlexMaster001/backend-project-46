@@ -1,14 +1,14 @@
 import _ from 'lodash'
 
-const indent = (depth) => ' '.repeat((depth * 4) - 2)
+const indent = depth => ' '.repeat((depth * 4) - 2)
 
 const stringify = (value, depth) => {
   if (!_.isObject(value)) {
-    return value;
+    return value
   }
 
   const keys = Object.keys(value)
-  const getKeys = keys.map((key) => `${indent(depth + 1)}  ${key}: ${stringify(value[key], depth + 1)}`)
+  const getKeys = keys.map(key => `${indent(depth + 1)}  ${key}: ${stringify(value[key], depth + 1)}`)
   return `{\n${getKeys.join('\n')}\n  ${indent(depth)}}`
 }
 

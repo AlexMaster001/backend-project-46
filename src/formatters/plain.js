@@ -1,4 +1,4 @@
-import _ from 'lodash';
+import _ from 'lodash'
 
 const whatIsValue = (value) => {
   if (_.isObject(value)) {
@@ -15,7 +15,7 @@ const whatIsValue = (value) => {
 
 const formatPlain = (objTree) => {
   const format = (nodes, property) => nodes
-    .filter((node) => node.status !== 'unchanged')
+    .filter(node => node.status !== 'unchanged')
     .map((node) => {
       const item = property ? `${property}.${node.key}` : node.key
       switch (node.status) {
@@ -31,7 +31,7 @@ const formatPlain = (objTree) => {
           throw new Error(`Not exist: ${node.status}`)
       }
     }).join('\n')
-  return format(objTree, 0);
+  return format(objTree, 0)
 }
 
 export default formatPlain
